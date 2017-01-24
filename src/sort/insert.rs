@@ -4,9 +4,10 @@ use std::fmt;
 // p.251
 pub fn sort<T: Ord + fmt::Debug>(input: &mut Vec<T>) {
     for i in 1..input.len() {
-        'back: for j in (1..(i+1)).rev() {  // as right border is not included, do: i+1
-            if input[j-1] > input[j] {
-                input.swap(j-1, j);
+        // as right border is not included, do: i+1
+        'back: for j in (1..(i + 1)).rev() {
+            if input[j - 1] > input[j] {
+                input.swap(j - 1, j);
             } else {
                 break 'back;
             }
@@ -21,6 +22,8 @@ pub fn sort<T: Ord + fmt::Debug>(input: &mut Vec<T>) {
 //    for j in 1..input.len() {
 //        let key = input[j].clone();
 //        let mut i = j - 1;
+//        // dirty hack: as "i" has usize type, it can't be < 0
+//        // but we need to be able to update a first element of the vector
 //        let mut insert_first = false;
 //        'back: while input[i] > key {
 //            input[i + 1] = input[i].clone();
@@ -41,9 +44,9 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_insertion_sort(){
+    fn test_insertion_sort() {
         let mut tests = super::super::get_test_vecs();
-        for t in tests.iter_mut(){
+        for t in tests.iter_mut() {
             let test_slice = t.as_mut();
             println!("+ Unsorted: {:?}", test_slice);
             sort(test_slice);
