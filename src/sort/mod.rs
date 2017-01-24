@@ -1,4 +1,5 @@
-pub mod insertion;
+pub mod insert;
+pub use self::insert::sort as insertion;
 
 /// Test if a slice is in a sorted state.
 pub fn is_sorted<T : Ord>(slice: &[T]) -> bool {
