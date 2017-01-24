@@ -3,4 +3,7 @@ name = "algo"
 version = "0.1.0"
 authors = ["Eugene Kalinin <e.v.kalinin@gmail.com>"]
 
+[features]
+unstable = []
+
 [dependencies]
