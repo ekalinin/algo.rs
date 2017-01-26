@@ -44,7 +44,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_insertion_sort() {
+    fn test_sort() {
         let mut tests = super::super::get_test_vecs();
         for t in tests.iter_mut() {
             let mut test_copy = t.clone();
