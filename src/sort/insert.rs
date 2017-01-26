@@ -2,6 +2,18 @@ use std::fmt;
 
 // Sedgewick edition (~30% faster than Cormen's one)
 // p.251
+
+/// Insertion sort.
+///
+/// Time complexity:
+///
+///     * best:     Ω(n)
+///     * avg:      Θ(n^2)
+///     * worst:    O(n^2)
+///
+/// Space complexity:
+///
+///     * O(1)
 pub fn sort<T: Ord + fmt::Debug>(input: &mut Vec<T>) {
     for i in 1..input.len() {
         // as right border is not included, do: i+1
