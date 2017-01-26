@@ -8,9 +8,7 @@ pub fn sort<T: Ord>(input: &mut Vec<T>) {
         for j in (i + 1)..size {
             if input[j] < input[min] { min = j; }
         }
-        if i != min {
-            input.swap(i, min);
-        }
+        input.swap(i, min);
     }
 }
 
