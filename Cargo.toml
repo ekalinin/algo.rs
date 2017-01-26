@@ -7,3 +7,11 @@ authors = ["Eugene Kalinin <e.v.kalinin@gmail.com>"]
 unstable = []
 
 [dependencies]
+
+[lib]
+name = "algo"
+path = "src/lib.rs"
+
+[[bin]]
+name = "algotest"
+path = "src/main.rs"
