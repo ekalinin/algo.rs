@@ -16,8 +16,8 @@ pub fn sort<T: Ord + fmt::Debug>(input: &mut Vec<T>) {
 }
 
 //use std::clone;
-// Cormen edition
-// p.18
+//// Cormen edition
+//// p.18
 //pub fn sort<T: Ord + fmt::Debug + clone::Clone>(input: &mut Vec<T>) {
 //    for j in 1..input.len() {
 //        let key = input[j].clone();
@@ -47,11 +47,14 @@ mod tests {
     fn test_insertion_sort() {
         let mut tests = super::super::get_test_vecs();
         for t in tests.iter_mut() {
+            let mut test_copy = t.clone();
             let test_slice = t.as_mut();
             println!("+ Unsorted: {:?}", test_slice);
             sort(test_slice);
             println!("-   Sorted: {:?}", test_slice);
             assert!(super::super::is_sorted(test_slice));
+            test_copy.sort();
+            assert!(super::super::is_eq(test_slice, test_copy.as_mut()));
         }
     }
 }

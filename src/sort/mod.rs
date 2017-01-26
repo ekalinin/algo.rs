@@ -1,8 +1,10 @@
 pub mod insert;
+//pub mod select;
 pub use self::insert::sort as insertion;
+//pub use self::select::sort as selection;
 
 /// Test if a slice is in a sorted state.
-pub fn is_sorted<T : Ord>(slice: &[T]) -> bool {
+pub fn is_sorted<T: Ord>(slice: &[T]) -> bool {
     for win in slice.windows(2) {
         // slice.windows(2) should always return a slice of size 2
         assert_eq!(win.len(), 2);
@@ -13,6 +15,13 @@ pub fn is_sorted<T : Ord>(slice: &[T]) -> bool {
         };
     }
     true
+}
+
+// http://stackoverflow.com/a/40768104
+pub fn is_eq<T: Ord>(a: &[T], b: &[T]) -> bool {
+    // zip stops at the shortest
+    (a.len() == b.len()) &&
+        a.iter().zip(b).all(|(a, b)| *a == *b)
 }
 
 #[cfg(test)]
