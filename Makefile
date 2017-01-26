@@ -14,3 +14,6 @@ bench:
 
 tests:
 	${CMD} test --lib
+
+doc:
+	${CMD} doc --no-deps
