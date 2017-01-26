@@ -13,4 +13,4 @@ bench:
 	${CMD} bench --features "unstable"
 
 tests:
-	${CMD} test
+	${CMD} test --lib
