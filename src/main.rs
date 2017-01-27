@@ -1,8 +1,8 @@
 extern crate algo;
 
 fn main() {
-    let mut test = vec!(8,5,2,6,9,3);
+    let mut test = vec!(0,3,7,6);
     println!("Origin: {:?}", test);
-    algo::sort::insertion(test.as_mut());
+    algo::sort::mergesort(test.as_mut());
     println!("Sorted: {:?}", test);
 }
