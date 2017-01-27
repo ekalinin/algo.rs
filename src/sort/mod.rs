@@ -99,6 +99,7 @@ mod bench {
 
 pub mod insert;
 pub mod select;
+pub mod native;
 
 pub use self::insert::sort as insertion;
 pub use self::select::sort as selection;
