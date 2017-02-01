@@ -101,7 +101,9 @@ pub mod insert;
 pub mod select;
 pub mod native;
 pub mod merge;
+pub mod bubble;
 
 pub use self::insert::sort as insertion;
 pub use self::select::sort as selection;
 pub use self::merge::sort as mergesort;
+pub use self::bubble::sort as bubblesort;
